@@ -1,0 +1,57 @@
+*,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshowContainer {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlide {
+  border: solid 1px red;
+  margin-bottom: 40px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slideImage {
+  height: 100%;
+  width: 100%;
+}
+
+/* Slide's text */
+.mySlide > p {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  color: white;
+  background-color: black;
+  padding: 0.2rem;
+  transform: translate(-50%, 0%);
+}
+
+/* next and prev buttons */
+.prev,
+.next {
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  background-color: black;
+}
+
+.next {
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
