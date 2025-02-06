@@ -40,11 +40,22 @@ const createSlideShow = (slides) => {
 
   nextBtn.addEventListener("click", () => {
     changeSlide(slides, true);
+    //resetAutoSlide();
   });
 
   previousBtn.addEventListener("click", () => {
     changeSlide(slides);
+    //resetAutoSlide();
   });
+
+  let autoSlideInterval;
+  const resetAutoSlide = () => {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      changeSlide(slides, true);
+    }, 5000);
+  };
+  //resetAutoSlide();
 
   slideShowContainer.appendChild(previousBtn);
   slideShowContainer.appendChild(nextBtn);
@@ -71,6 +82,7 @@ const changeSlide = (slides, nextSlide = false) => {
   }
 };
 
+//Example use case
 let slides = [
   createSlide(images.img1, "Caption Text", true),
   createSlide(images.img2, "Caption Text"),

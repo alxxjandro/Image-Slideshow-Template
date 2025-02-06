@@ -29,7 +29,7 @@ body {
 .mySlide > p {
   margin: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 50%;
   color: white;
   background-color: black;
@@ -44,12 +44,37 @@ body {
   color: white;
   position: absolute;
   top: 50%;
-  transform: translate(0%, -50%);
-  background-color: black;
+  transform: translate(0%, -90%);
+  background-color: rgba(0, 0, 0, 0.486);
+  border-radius: 20px;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+  /* prevent text highlighting */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .next {
-  right: 0;
+  right: 0%;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.811);
+  transform: scale(1.1) translate(0%, -80%);
+}
+
+.prev:active,
+.next:active {
+  transform: scale(1.2) translate(0%, -75%);
 }
 
 .hidden {
