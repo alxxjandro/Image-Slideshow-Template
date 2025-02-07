@@ -8,9 +8,9 @@ body {
   height: 100vh;
 }
 
-h1{
-    text-align: center;
-    margin: 0;
+h1 {
+  text-align: center;
+  margin: 0;
 }
 
 .slideshowContainer {
@@ -24,23 +24,22 @@ h1{
   margin-bottom: 40px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 
-
   position: relative;
   display: flex;
   align-items: center;
 }
 
 .slideImage {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* Slide's text */
 .mySlide > p {
-    position: absolute;
+  position: absolute;
   margin: 0;
-  padding: .35rem 2rem;
+  padding: 0.35rem 2rem;
   bottom: 10px;
   left: 50%;
   color: white;
@@ -65,16 +64,16 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   margin: 0 1rem;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
 
   /* prevent text highlighting */
-  -webkit-user-select: none; 
+  -webkit-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
 
 .next {
@@ -96,37 +95,37 @@ h1{
   display: none;
 }
 
-.fatherDiv{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.fatherDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.dotContainer{
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-    display: flex;
-    justify-content: center;
+.dotContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .dot {
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 2px;
-    background-color: #a6a6a6;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.2s ease;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #a6a6a6;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-.dot:hover{
-    background-color: #565656;
+.dot:hover {
+  background-color: #565656;
 }
 
-.active{
-    background-color: #575757;
+.active {
+  background-color: #575757;
 }

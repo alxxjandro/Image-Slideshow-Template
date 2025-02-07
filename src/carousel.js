@@ -21,31 +21,29 @@ const createSlide = (image, textContent, firstSlide = false) => {
   return divContainer;
 };
 
-const addDot = () =>{
-  let dot = Object.assign(document.createElement("span"),{
+const addDot = () => {
+  let dot = Object.assign(document.createElement("span"), {
     className: "dot",
-  })
+  });
   return dot;
-}
+};
 
-const setDotActive = (dots, index) =>{
-  dots.forEach(dot => {
+const setDotActive = (dots, index) => {
+  dots.forEach((dot) => {
     dot.classList = "";
     dot.classList.add("dot");
   });
   dots[index].classList.add("active");
-}
+};
 
-const loadDotSlide = (slides) =>{
+const loadDotSlide = (slides) => {
   const dots = document.querySelectorAll(".dot");
-  console.log(dots)
+  console.log(dots);
   dots.forEach((dot, index) => {
-
-    dot.addEventListener("click", () =>{
-      setDotActive(dots,index);
+    dot.addEventListener("click", () => {
+      setDotActive(dots, index);
       changeSlide(slides, false, index);
-    })
-
+    });
   });
 };
 
@@ -54,7 +52,7 @@ const createSlideShow = (slides) => {
   const dotContainer = document.createElement("div");
   dotContainer.classList.add("dotContainer");
 
-  slides.forEach((slide,index) => {
+  slides.forEach((slide, index) => {
     slideShowContainer.appendChild(slide);
     dotContainer.appendChild(addDot());
   });
@@ -88,11 +86,11 @@ const createSlideShow = (slides) => {
     }, 5000);
   };
   //resetAutoSlide();
-  
+
   slideShowContainer.appendChild(previousBtn);
   slideShowContainer.appendChild(nextBtn);
   slideShowContainer.appendChild(dotContainer);
-  
+
   return slideShowContainer;
 };
 
@@ -112,19 +110,18 @@ const changeSlide = (slides, nextSlide = false, targetIndex = null) => {
   if (nextSlide) {
     if (currentIndex == slides.length - 1) currentIndex = -1;
     slides[currentIndex + 1].classList.remove("hidden");
-    console.log(currentIndex, "next")
-    setDotActive(dots,currentIndex+1);
+    console.log(currentIndex, "next");
+    setDotActive(dots, currentIndex + 1);
   } else {
     if (currentIndex - 1 == -1) currentIndex = slides.length;
     slides[currentIndex - 1].classList.remove("hidden");
-    console.log(currentIndex, "prev")
-    setDotActive(dots,currentIndex-1);
+    console.log(currentIndex, "prev");
+    setDotActive(dots, currentIndex - 1);
   }
-  
 };
 
 //Example use case
-const carouselExample = function(){
+const carouselExample = (function () {
   let slides = [
     createSlide(images.img1, "Caption Text", true),
     createSlide(images.img2, "Caption Text"),
@@ -135,16 +132,15 @@ const carouselExample = function(){
   ];
 
   const body = document.body;
-  const fatherDiv = document.createElement("div")
+  const fatherDiv = document.createElement("div");
   const slideShow = createSlideShow(slides);
 
-  slideShow.classList.add("slideshowContainer")
+  slideShow.classList.add("slideshowContainer");
   fatherDiv.classList.add("fatherDiv");
   fatherDiv.appendChild(slideShow);
-  body.appendChild(fatherDiv)
-  
+  body.appendChild(fatherDiv);
+
   loadDotSlide(slides);
   const dots = document.querySelectorAll(".dot");
-  setDotActive(dots,0);
-  
-}();
+  setDotActive(dots, 0);
+})();
