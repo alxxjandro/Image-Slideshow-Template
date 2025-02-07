@@ -1,1 +1,1 @@
-This repo contains a template for a basic webpack configuration! :)
+Image carousel slideshow template!
