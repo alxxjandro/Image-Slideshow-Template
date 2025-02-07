@@ -1,19 +1,29 @@
-*,
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
 }
 
 .slideshowContainer {
   max-width: 500px;
   position: relative;
-  margin: auto;
+  flex: 1;
 }
 
 .mySlide {
-  border: solid 1px red;
+  border-radius: 10px;
   margin-bottom: 40px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+
 
   position: relative;
   display: flex;
@@ -21,19 +31,21 @@ body {
 }
 
 .slideImage {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* Slide's text */
 .mySlide > p {
+    position: absolute;
   margin: 0;
-  position: absolute;
-  top: 0;
+  padding: .35rem 2rem;
+  bottom: 10px;
   left: 50%;
   color: white;
-  background-color: black;
-  padding: 0.2rem;
+  background-color: rgba(71, 71, 71, 0.64);
+  border-radius: 5px;
   transform: translate(-50%, 0%);
 }
 
@@ -43,23 +55,26 @@ body {
   cursor: pointer;
   color: white;
   position: absolute;
-  top: 50%;
-  transform: translate(0%, -90%);
+  bottom: 50%;
+
   background-color: rgba(0, 0, 0, 0.486);
   border-radius: 20px;
   width: 1.8rem;
   height: 1.8rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
+  
+  margin: 0 1rem;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
+
   /* prevent text highlighting */
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; 
 }
 
 .next {
@@ -69,14 +84,49 @@ body {
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.811);
-  transform: scale(1.1) translate(0%, -80%);
+  transform: scale(1.1);
 }
 
 .prev:active,
 .next:active {
-  transform: scale(1.2) translate(0%, -75%);
+  transform: scale(1.2);
 }
 
 .hidden {
   display: none;
+}
+
+.fatherDiv{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dotContainer{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #a6a6a6;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dot:hover{
+    background-color: #565656;
+}
+
+.active{
+    background-color: #575757;
 }
